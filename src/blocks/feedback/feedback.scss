@@ -1,0 +1,32 @@
+.feedback {
+	$self: &;
+
+	&__inner {
+		background-color: #1D1C2C;
+		border-radius: 80px;
+		padding: 50px 120px;
+		display: flex;
+	}
+
+	&__side {
+
+	}
+
+	&__title {
+		margin-bottom: 10px;
+
+		span {
+			display: block;
+		}
+	}
+
+	&__text {
+		font-weight: 300;
+		font-style: italic;
+		line-height: 1.6;
+	}
+
+	&__form {
+
+	}
+}

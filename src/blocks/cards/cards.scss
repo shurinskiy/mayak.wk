@@ -1,0 +1,55 @@
+.cards {
+	$self: &;
+
+	&__inner {
+		padding-top: 120px;
+		padding-bottom: 40px;
+		counter-reset: item_ctr;
+	}
+
+	&__item {
+		display: flex;
+		align-items: center;
+		margin-bottom: 80px;
+	
+		&:nth-child(odd) {
+			flex-direction: row-reverse;
+	
+			#{$self}__side {
+				padding-left: 0;
+				padding-right: 100px;
+			}
+		}
+	}
+	
+	&__image {
+		box-sizing: border-box;
+		width: 50%;
+	}
+	
+	&__side {
+		box-sizing: border-box;
+		width: 50%;
+		padding-top: 60px;
+		padding-bottom: 60px;
+		padding-left: 100px;
+		padding-right: 0;
+	}
+
+	&__subtitle {
+		margin-bottom: 20px;
+
+		&::before {
+			display: inline-block;
+			counter-increment: item_ctr;
+			content: "0" counter(item_ctr) ".";
+			color: rgb(var(--accent));
+			margin-right: 20px;
+		}
+	}
+
+	&__text {
+		font-size: 14px;
+		font-weight: 300;
+	}
+}

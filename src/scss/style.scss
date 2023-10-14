@@ -1,0 +1,69 @@
+@import "lib/additional.scss"; 
+@include reset(); 
+
+// Include breakpoints badge
+// body { @include screen-media(); }
+
+// Browsersync mark
+#__bs_notify__ { background-color: rgba(27, 32, 50, 0.5) !important; }
+
+// Import media-query helper
+@import "../../node_modules/include-media/dist/_include-media.scss";
+
+$breakpoints: (
+	'xxxs': 360px,
+	'xxs': 480px,
+	'xs': 640px,
+	'sm': 780px,
+	'md': 960px,
+	'lg': 1100px,
+	'xlg': 1280px,
+	'xxlg': 1440px,
+	'xxxlg': 1680px,
+	'xxxxlg': 1920px
+);
+
+@include font-face("Montserrat-ExtraLight", "DM", 100);
+@include font-face("Montserrat-SemiBold", "DM", 600);
+@include font-face("Montserrat-Regular", "DM", 400);
+@include font-face("Montserrat-Medium", "DM", 500);
+@include font-face("Montserrat-Black", "DM", 900);
+@include font-face("Montserrat-Light", "DM", 300);
+@include font-face("Montserrat-Bold", "DM", 700);
+@include font-face("Montserrat-Thin", "DM", 200);
+@import "../../node_modules/swiper/swiper";
+@import "../../node_modules/swiper/modules/effect-fade";
+
+// Import BEM blocks scss
+@import "../blocks/**/*.scss";
+
+:root {
+	--size: #{$basesize}px;
+	--bgcolor: 17, 18, 19;
+	--accent: 219, 225, 31;
+	--color: 255, 255, 255;
+	--dark: 129, 128, 154;
+}
+
+body, html {
+	box-sizing: border-box;
+	background-color: rgb(var(--bgcolor));
+	font-family: "DM", sans-serif;
+	color: rgb(var(--color));
+	font-size: var(--size);
+	line-height: 1.2;
+	font-weight: 400;
+	min-height: 100vh;
+	display: flex;
+	flex-flow: column nowrap;
+	scroll-behavior: smooth;
+}
+
+.footer { 
+	flex: 0 0 auto; 
+	margin-top: auto; 
+}
+
+p { margin-bottom: 10px; }
+strong { font-weight: bold; }
+em { font-style: italic; }

@@ -1,0 +1,11 @@
+.title {
+	$self: &;
+	color: rgb(var(--color));
+	font-size: 48px;
+	font-weight: 800;
+	@include range(48px, 32px, 1280px, 480px);
+	
+	span {
+		color: rgb(var(--accent));
+	}
+}

@@ -1,0 +1,58 @@
+.faq {
+	$self: &;
+
+	&__inner {
+		padding-top: 120px;
+		padding-bottom: 50px;
+	}
+
+	&__title {
+		margin-bottom: 50px;
+	}
+
+	&__items {
+		counter-reset: item_ctr;
+		column-count: 2;
+		column-gap: 50px;
+		column-width: 350px;
+	}
+	
+	&__item {
+		margin-bottom: 70px;
+		padding-left: 90px;
+		position: relative;
+		
+		@include media('<=xxs') {
+			padding-left: 60px;
+		}
+
+		&::before {
+			display: block;
+			counter-increment: item_ctr;
+			content: counter(item_ctr) ".";
+			color: rgb(var(--accent));
+			font-weight: 800;
+			font-size: 64px;
+			position: absolute;
+			top: 0;
+			left: 0;
+			
+			@include media('<=xxs') {
+				font-size: 52px;
+			}
+		}
+	}
+
+	&__subtitle {
+		font-size: 18px;
+		font-weight: 600;
+		margin-bottom: 20px;
+	}
+
+	&__text {
+		color: rgb(var(--dark));
+		font-style: italic;
+		line-height: 1.7;
+		font-size: 12px;
+	}
+}
