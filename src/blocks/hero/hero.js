@@ -11,7 +11,7 @@ import { Autoplay, EffectFade, Pagination } from 'swiper/modules';
 		effect: "fade",
 		fadeEffect: { crossFade: true },
 		autoplay: { 
-			delay: 5000,
+			delay: 10000,
 			disableOnInteraction: true
 		},
 		pagination: {

@@ -38,17 +38,19 @@ $breakpoints: (
 @import "../blocks/**/*.scss";
 
 :root {
+	--container: 1260px;
 	--size: #{$basesize}px;
 	--bgcolor: 17, 18, 19;
 	--accent: 219, 225, 31;
 	--color: 255, 255, 255;
 	--dark: 129, 128, 154;
+	--font: "DM", sans-serif
 }
 
 body, html {
 	box-sizing: border-box;
 	background-color: rgb(var(--bgcolor));
-	font-family: "DM", sans-serif;
+	font-family: var(--font);
 	color: rgb(var(--color));
 	font-size: var(--size);
 	line-height: 1.2;

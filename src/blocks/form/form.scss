@@ -1,12 +1,48 @@
 .form {
 	$self: &;
+	display: flex;
+	flex-flow: column nowrap;
 
 	&__field {
+		width: 100%;
+		border-radius: 16px;
+		background: #232234;
+		height: 45px;
+		margin: 0 auto 20px;
+		
+		&:first-child {
+			@include hide();
+		}
+		
+		input {
+			@extend %reset-input;
+			color: rgb(var(--color));
+			height: 100%;
+			width: 100%;
+			font-size: 13px;
+			padding: 5px 20px;
 
+			&::placeholder {
+				font-weight: 300;
+				color: #B3B2C5;
+			}
+		}
 	}
-
+	
 	&__submit {
-
+		@extend %reset-button;
+		text-transform: uppercase;
+		padding: 5px 20px;
+		color: #12121B;
+		font-size: 12px;
+		height: 45px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background-color: rgb(var(--color));
+		font-family: var(--font);
+		border-radius: 16px;
+		align-self: center;
+		font-weight: 600;
 	}
-
 }

@@ -3,7 +3,6 @@
 
 	&__inner {
 		padding-top: 120px;
-		padding-bottom: 40px;
 		counter-reset: item_ctr;
 	}
 
@@ -11,13 +10,33 @@
 		display: flex;
 		align-items: center;
 		margin-bottom: 80px;
-	
+		
+		@include media('<=md') {
+			margin-bottom: 50px;
+		}
+		
+		@include media('<=xs') {
+			display: block;
+		}
+
 		&:nth-child(odd) {
 			flex-direction: row-reverse;
 	
 			#{$self}__side {
 				padding-left: 0;
 				padding-right: 100px;
+		
+				@include media('<=lg') {
+					padding-right: 60px;
+				}
+		
+				@include media('<=md') {
+					padding-right: 30px;
+				}
+				
+				@include media('<=xs') {
+					padding-right: 0;
+				}
 			}
 		}
 	}
@@ -25,15 +44,45 @@
 	&__image {
 		box-sizing: border-box;
 		width: 50%;
+
+		@include media('<=md') {
+			height: 230px;
+		}
+		
+		@include media('<=xs') {
+			width: auto;
+			height: 300px;
+			margin-bottom: 20px;
+		}
+
+		img {
+			display: block;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
 	}
 	
 	&__side {
 		box-sizing: border-box;
 		width: 50%;
-		padding-top: 60px;
-		padding-bottom: 60px;
-		padding-left: 100px;
 		padding-right: 0;
+		padding-top: 20px;
+		padding-left: 100px;
+		padding-bottom: 20px;
+		
+		@include media('<=lg') {
+			padding-left: 60px;
+		}
+		
+		@include media('<=md') {
+			padding-left: 30px;
+		}
+		
+		@include media('<=xs') {
+			padding-left: 0;
+			width: auto;
+		}
 	}
 
 	&__subtitle {

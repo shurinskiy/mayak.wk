@@ -1,43 +1,131 @@
 .contact {
 	$self: &;
+	padding: 120px 0;
 
 	&__inner {
-		padding-top: 120px;
-		padding-bottom: 120px;
+		display: flex;
+		align-items: center;
+
+		@include media('<=md') {
+			flex-flow: column nowrap;
+			align-items: flex-start;
+		}
 	}
 
 	&__side {
-
+		box-sizing: border-box;
+		flex-grow: 1;
+		max-width: 480px;
 	}
 
 	&__title {
-
+		margin-bottom: 30px;
+		
+		@include media('<=md') {
+			margin-bottom: 50px;
+		}
 	}
 
 	&__text {
-
+		font-weight: 300;
+		line-height: 1.6;
+		font-style: italic;
+		margin-bottom: 30px;
 	}
 
 	&__map {
-
+		@extend %reset-button;
+		text-transform: uppercase;
+		color: rgb(var(--color));
+		padding: 5px 20px;
+		font-size: 12px;
+		height: 45px;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		background-color: rgb(var(--bgcolor));
+		border: 1px solid rgb(var(--accent));
+		font-family: var(--font);
+		border-radius: 16px;
+		align-self: center;
+		font-weight: 600;
 	}
 
 	&__links {
+		box-sizing: border-box;
+		display: flex;
+		justify-content: space-between;
+		flex-grow: 1;
+		max-width: 600px;
+		margin-left: auto;
 
+		@include media('<=md') {
+			order: -1;
+			display: block;
+			margin: 0;
+		}
 	}
 
 	&__link {
+		box-sizing: border-box;
+		display: block;
+		min-width: fit-content;
+		padding-left: 20px;
+		text-decoration: none;
 
-		&_phone {
-			
+		@include media('<=md') {
+			padding: 0;
+			margin-bottom: 40px;
+		}
+		
+		&::before {
+			display: block;
+			content: '';
+			width: 20px;
+			aspect-ratio: 1 / 1;
+			margin-bottom: 10px;
+			background-color: transparent;
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: 110% 110%;
 		}
 
-		&_tgm {
-			
+		span {
+			display: block;
+			font-size: 12px;
+			white-space: nowrap;
+
+			&:nth-of-type(1) {
+				color: #B3B2C5;
+				font-weight: 300;
+				margin-bottom: 10px;
+			}
+
+			&:nth-of-type(2) {
+				color: rgb(var(--color));
+				font-weight: 600;
+			}
 		}
 
-		&_mail {
-			
+		&_phone::before {
+			background-image: url('#{$images-path}icons-sprite.svg#icon-phone-view-accent');
+		}
+		
+		&_tgm::before {
+			background-image: url('#{$images-path}icons-sprite.svg#icon-tgm-view-accent');
+		}
+		
+		&_mail::before {
+			background-image: url('#{$images-path}icons-sprite.svg#icon-mail-view-accent');
+		}
+	}
+
+	&__social {
+		display: none !important;
+		
+		@include media('<=md') {
+			display: flex !important;
+			margin-bottom: 40px;
 		}
 	}
 }

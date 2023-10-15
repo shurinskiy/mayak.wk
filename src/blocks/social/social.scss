@@ -1,19 +1,30 @@
 .social {
 	$self: &;
-
+	display: flex;
+	align-items: center;
+	
 	&__link {
+		width: 20px;
+		aspect-ratio: 1 / 1;
+		background-position: center;
+		background-color: transparent;
+		background-repeat: no-repeat;
+		background-size: 120% 120%;
+
+		&:not(:last-child) {
+			margin-right: 15px;
+		}
 
 		&_inst {
-			
+			background-image: url('#{$images-path}icons-sprite.svg#icon-inst-view-white');			
 		}
-
+		
 		&_in {
-			
+			background-image: url('#{$images-path}icons-sprite.svg#icon-in-view-white');			
 		}
-
+		
 		&_fb {
-			
+			background-image: url('#{$images-path}icons-sprite.svg#icon-fb-view-white');			
 		}
 	}
-
 }

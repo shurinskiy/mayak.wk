@@ -31,14 +31,15 @@
 		margin-right: 30px;
 
 		&::before {
-			background-image: url('#{$images-path}icons-sprite.svg#icon-logo-view-accent');
-			background-position: center left;
+			background-image: url('#{$images-path}logo.svg');
+			background-position: left center;
 			background-color: transparent;
 			background-repeat: no-repeat;
 			background-size: 100% auto;
-
+			
 			@include media('<=xs') {
-				background-image: url('#{$images-path}icons-sprite.svg#icon-logo-short-view-accent');
+				background-size: cover;
+				background-image: url('#{$images-path}logo-short.svg');
 			}
 		}
 		
