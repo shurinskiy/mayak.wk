@@ -4,6 +4,11 @@
 	&__inner {
 		padding-top: 120px;
 		padding-bottom: 50px;
+		
+		@include media('<=xs') {
+			padding-top: 80px;
+			padding-bottom: 30px;
+		}
 	}
 
 	&__title {
@@ -21,6 +26,10 @@
 		margin-bottom: 70px;
 		padding-left: 90px;
 		position: relative;
+		
+		@include media('<=xs') {
+			margin-bottom: 50px;
+		}
 		
 		@include media('<=xxs') {
 			padding-left: 60px;

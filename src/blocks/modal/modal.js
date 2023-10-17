@@ -7,7 +7,7 @@ import { makeModalFrame } from "../../js/libs/modal";
 		select: '.gallery__image', 
 		scrollLock,
 		open: function(modal, el) {
-			// console.log(el.dataset.description);
+
 		}
 	});
 })();

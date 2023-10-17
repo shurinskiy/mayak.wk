@@ -3,7 +3,11 @@
 	color: rgb(var(--color));
 	font-size: 48px;
 	font-weight: 800;
-	@include range(48px, 32px, 1280px, 480px);
+	// @include range(48px, 32px, 1280px, 480px);
+	
+	@include media('<=xxxs') {
+		font-size: 40px;
+	}
 	
 	span {
 		color: rgb(var(--accent));

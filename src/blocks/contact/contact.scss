@@ -1,6 +1,10 @@
 .contact {
 	$self: &;
 	padding: 120px 0;
+	
+	@include media('<=xs') {
+		padding: 80px 0;
+	}
 
 	&__inner {
 		display: flex;

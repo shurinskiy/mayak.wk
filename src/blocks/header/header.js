@@ -15,9 +15,11 @@ import { menuToggle } from "../../js/libs/menuToggle";
 		class: 'opened'
 	});
 
-	window.addEventListener('scroll', () => {
-		header.classList[window.scrollY > 30 ? 'add': 'remove']('header_filled');
-	});
+	if (header.classList.contains('header_home')) {
+		window.addEventListener('scroll', () => {
+			header.classList[window.scrollY > 30 ? 'add': 'remove']('header_filled');
+		});
+	}
 
 	// открытие и закрытие меню, свайпом на мобильных устройствах
 	navi.addEventListener('swiped-left', (e) => menu.menuClose(e));

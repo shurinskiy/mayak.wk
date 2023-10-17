@@ -2,8 +2,18 @@
 	$self: &;
 
 	&__inner {
-		padding-top: 120px;
+		padding-top: 190px;
+		padding-bottom: 60px;
 		counter-reset: item_ctr;
+		
+		@include media('<=sm') {
+			padding-top: 140px;
+		}
+		
+		@include media('<=xs') {
+			padding-top: 110px;
+			padding-bottom: 40px;
+		}
 	}
 
 	&__item {
@@ -52,7 +62,7 @@
 		@include media('<=xs') {
 			width: auto;
 			height: 300px;
-			margin-bottom: 20px;
+			margin-bottom: 50px;
 		}
 
 		img {
@@ -80,7 +90,7 @@
 		}
 		
 		@include media('<=xs') {
-			padding-left: 0;
+			padding: 0;
 			width: auto;
 		}
 	}
