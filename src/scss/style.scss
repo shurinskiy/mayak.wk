@@ -32,7 +32,7 @@ $breakpoints: (
 @include font-face("Montserrat-Bold", "DM", 700);
 @include font-face("Montserrat-Thin", "DM", 200);
 @import "../../node_modules/swiper/swiper";
-@import "../../node_modules/swiper/modules/effect-fade";
+// @import "../../node_modules/swiper/modules/effect-fade";
 
 // Import BEM blocks scss
 @import "../blocks/**/*.scss";
