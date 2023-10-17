@@ -18,6 +18,21 @@
 			margin-bottom: 0;
 		}
 
+		#{$self}__image[data-animation] {
+			opacity: 0;
+	
+			&.showed {
+				animation: fadeInUp 0.7s;
+				animation-fill-mode: forwards;
+	
+				@for $i from 1 through 8 {
+					&:nth-child(#{$i}) {
+						animation-delay: #{$i * 0.2}s;
+					}
+				}
+			}
+		}
+
 		&:nth-child(odd) #{$self}__image {
 		
 			&:nth-child(1) {
@@ -190,7 +205,7 @@
 		overflow: hidden;
 		transform: translateZ(0);
 		backface-visibility: hidden;
-		
+
 		@include media('<=xxxs') {
 			display: block;
 			margin-bottom: 2px;
