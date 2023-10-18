@@ -5,6 +5,10 @@
 	position: relative;
 	z-index: 1;
 	
+	@include media('<=xxs') {
+		min-height: 60vh;
+	}
+	
 	&__slider {
 		
 	}

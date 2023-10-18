@@ -3,16 +3,14 @@
 
 	&__inner {
 		padding-top: 120px;
-		padding-bottom: 50px;
 		
 		@include media('<=xs') {
 			padding-top: 80px;
-			padding-bottom: 30px;
 		}
 	}
 
 	&__title {
-		margin-bottom: 50px;
+		margin-bottom: 20px;
 	}
 
 	&__items {
@@ -23,16 +21,15 @@
 	}
 	
 	&__item {
-		margin-bottom: 70px;
-		padding-left: 90px;
 		position: relative;
+		padding: 35px 0 35px 90px; 
 		
 		@include media('<=xs') {
-			margin-bottom: 50px;
+			padding: 25px 0 25px 90px; 
 		}
 		
 		@include media('<=xxs') {
-			padding-left: 60px;
+			padding: 25px 0 25px 60px; 
 		}
 
 		&::before {
@@ -43,8 +40,12 @@
 			font-weight: 800;
 			font-size: 64px;
 			position: absolute;
-			top: 0;
+			top: 30px;
 			left: 0;
+			
+			@include media('<=xs') {
+				top: 20px;
+			}
 			
 			@include media('<=xxs') {
 				font-size: 52px;

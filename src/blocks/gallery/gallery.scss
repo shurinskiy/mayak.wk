@@ -209,10 +209,17 @@
 		overflow: hidden;
 		transform: translateZ(0);
 		backface-visibility: hidden;
+		position: relative;
 
 		@include media('<=xxxs') {
 			display: block;
 			margin-bottom: 2px;
+		}
+
+		&:hover {
+			#{$self}__text {
+				opacity: 1;
+			}
 		}
 
 		&[data-modal] {
@@ -220,7 +227,7 @@
 		}
 
 		&:hover img {
-			transform: scale(1.1);
+			transform: scale(1.08);
 		}
 		
 		img {
@@ -229,7 +236,48 @@
 			height: 100%;
 			object-fit: cover;
 			object-position: center;
-			transition: transform 0.4s;
+			transition: transform 0.4s ease-in-out;
+		}
+	}
+
+	&__text {
+		box-sizing: border-box;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		z-index: 1;
+		padding: 10px;
+		background-color: rgba(0, 0, 0, 0.5);
+		transition: opacity 0.7s;
+		opacity: 0;
+		
+		@include media('<=xxs') {
+			padding: 5px;
+		}
+		
+		@include media('<=xxxs') {
+			padding: 10px;
+		}
+
+		h3 {
+			font-size: 30px;
+			font-weight: 600;
+			margin-bottom: 5px;
+			@include range(30px, 15px, 1440px, 780px);
+			@include range(30px, 15px, 780px, 360px);
+		}
+		
+		p {
+			font-size: 14px;
+			font-weight: 200;
+			margin-bottom: 0;
+			@include range(14px, 9px, 1440px, 780px);
+			@include range(14px, 10px, 780px, 360px);
+			
+			@include media('<=xxxs') {
+				font-size: 11px;
+			}
 		}
 	}
 }

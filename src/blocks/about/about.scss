@@ -3,23 +3,20 @@
 
 	&__top {
 		padding-top: 120px;
-		padding-bottom: 120px;
 		
 		@include media('<=xs') {
 			padding-top: 80px;
-			padding-bottom: 80px;
 		}
 		
 		@include media('<=xxs') {
 			padding-top: 50px;
-			padding-bottom: 50px;
 		}
 	}
-
+	
 	&__title {
 		margin-bottom: 50px;
 	}
-
+	
 	&__text {
 		font-size: 14px;
 		font-weight: 300;
@@ -27,13 +24,21 @@
 		column-count: 2;
 		column-gap: 30px;
 		column-width: 350px;
-
+		
 		p {
 			break-inside: avoid;
 		}
 	}
-
+	
 	&__gallery {
-
+		padding-top: 120px;
+		
+		@include media('<=xs') {
+			padding-top: 80px;
+		}
+		
+		@include media('<=xxs') {
+			padding-top: 50px;
+		}
 	}
 }
