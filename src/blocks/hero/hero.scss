@@ -5,10 +5,6 @@
 	position: relative;
 	z-index: 1;
 	
-	@include media('<=xxs') {
-		min-height: 60vh;
-	}
-	
 	&__slider {
 		
 	}
@@ -28,10 +24,10 @@
 		box-sizing: border-box;
 		display: flex;
 		align-items: center;
-		justify-content: flex-end;
+		justify-content: center;
 		position: absolute;
 		z-index: 2;
-		bottom: 80px;
+		bottom: 60px;
 		left: 50%;
 		transform: translateX(-50%);
 		width: 100%;
@@ -52,7 +48,7 @@
 		height: 8px;
 		border-radius: 50%;
 		flex-shrink: 0;
-		background-color: rgba(var(--color), 0.3);
+		background-color: rgba(var(--accent), 0.3);
 		cursor: pointer;
 		
 		&:not(:last-child) {
@@ -60,17 +56,17 @@
 		}
 		
 		&.active {
-			background-color: rgb(var(--color));
+			background-color: rgb(var(--accent));
 		}
 	}
 
 	&__down {
 		display: block;
 		position: absolute;
-		left: 50%;
-		bottom: 50px;
+		// width: calc(100vw - (100vw - var(--container)) / 2);
+		right: calc((100vw - var(--container)) / 2);
+		bottom: 100px;
 		z-index: 3;
-		transform: translateX(-50%);
 		height: 28px;
 		width: 28px;
 		background-color: rgb(var(--bgcolor));
@@ -79,12 +75,16 @@
 		align-items: center;
 		justify-content: center;
 
+		@include media('<=xxlg') {
+			right: 30px;
+		}
+
 		&::before { 
 			display: block;
 			content: '';
 			width: 12px;
 			height: 5px;
-			background: url('#{$images-path}icons-sprite.svg#icon-down-view-white') center / cover no-repeat transparent;
+			background: url('#{$images-path}icons-sprite.svg#icon-down-view-accent') center / cover no-repeat transparent;
 		}
 	}
 }
