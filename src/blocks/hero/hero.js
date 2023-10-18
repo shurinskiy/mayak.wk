@@ -9,7 +9,7 @@ import { Autoplay, Pagination } from 'swiper/modules';
 		modules: [ Autoplay, Pagination ],
 		spaceBetween: 0,
 		loop: true,
-		speed: 2000,
+		speed: 1000,
 		// effect: "fade",
 		// fadeEffect: { crossFade: true },
 		autoplay: { 

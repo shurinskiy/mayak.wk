@@ -20,15 +20,19 @@
 
 		#{$self}__image[data-animation] {
 			opacity: 0;
-	
+			
 			&.showed {
 				animation: fadeInUp 0.7s;
 				animation-fill-mode: forwards;
-	
+
 				@for $i from 1 through 8 {
 					&:nth-child(#{$i}) {
 						animation-delay: #{$i * 0.2}s;
 					}
+				}
+
+				@include media('<=xxs') {
+					animation-delay: 0.2s !important;
 				}
 			}
 		}
