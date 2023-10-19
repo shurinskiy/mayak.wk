@@ -1,6 +1,7 @@
 .hero {
 	$self: &;
 	min-height: 100vh;
+	min-height: calc(var(--vh, 1vh) * 100);
 	display: flex;
 	position: relative;
 	z-index: 1;
@@ -38,6 +39,7 @@
 		@include media('<=xxs') {
 			padding-right: 20px;
 			padding-left: 20px;
+			bottom: 30px;
 		}
 	}
 
@@ -74,9 +76,18 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-
+		
 		@include media('<=xxlg') {
 			right: 30px;
+		}
+		
+		@include media('<=xxs') {
+			bottom: 60px;
+			right: 20px;
+		}
+		
+		@include media('<=xxxs') {
+			right: 15px;
 		}
 
 		&::before { 
