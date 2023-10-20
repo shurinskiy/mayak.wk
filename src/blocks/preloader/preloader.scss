@@ -33,6 +33,7 @@
 		margin-bottom: 10px;
 		white-space: nowrap;
 		text-transform: uppercase;
+		color: rgba(var(--color), 0.4);
 		@include range(36px, 22px, 480px, 360px);
 	}
 
@@ -43,6 +44,6 @@
 	&__progress {
 		height: 1px;
 		width: 0;
-		background-color: rgb(var(--accent));
+		background-color: rgb(var(--color));
 	}
 }

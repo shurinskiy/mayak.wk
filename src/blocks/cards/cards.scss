@@ -29,6 +29,12 @@
 			display: block;
 		}
 
+		@for $i from 1 through 3 {
+			&:nth-child(#{$i}) #{$self}__image.showed {
+				animation-delay: #{$i * 0.2}s;
+			}
+		}
+
 		&:nth-child(odd) {
 			flex-direction: row-reverse;
 	
@@ -54,6 +60,7 @@
 	&__image {
 		box-sizing: border-box;
 		width: 50%;
+		opacity: 0;
 
 		@include media('<=md') {
 			height: 230px;
@@ -63,6 +70,12 @@
 			width: auto;
 			height: 300px;
 			margin-bottom: 50px;
+			animation-delay: 0s !important;
+		}
+
+		&.showed {
+			animation: fadeInUp 0.7s;
+			animation-fill-mode: forwards;
 		}
 
 		img {

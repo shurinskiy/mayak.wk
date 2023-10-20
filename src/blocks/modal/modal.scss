@@ -29,6 +29,10 @@
 
 	&_self {
 	
+		@include media('<=sm') {
+			padding: 20px;
+		}
+	
 		@include media('<=xxs') {
 			padding: 15px 0;
 		}
@@ -36,13 +40,13 @@
 		#{$self}__body {
 			background-color: transparent;
 			box-shadow: none;
-			max-width: none;
+			max-height: 100vh;
+			max-width: 100%;
 			width: auto;
 			padding: 0;
 		}
 
 		#{$self}__content {
-			overflow: hidden;
 			position: relative;
 		}
 
@@ -53,19 +57,23 @@
 		}
 
 		.gallery__text {
-			padding: 20px;
+			padding: 20px 20px 0;
 			opacity: 1;
+			bottom: auto;
+			top: 100%;
 
 			@include media('<=xxs') {
-				padding: 15px;
+				padding: 15px 15px 0;
 			}
 
 			h3 {
-				font-size: 36px;				
-				@include range(36px, 18px, 1440px, 780px);
+				text-align: center;
+				font-size: 30px;
+				@include range(30px, 18px, 1440px, 780px);
 			}
-
+			
 			p {
+				text-align: center;
 				font-size: 18px;
 				@include range(18px, 13px, 1440px, 780px);
 			}

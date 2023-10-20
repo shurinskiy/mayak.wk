@@ -46,15 +46,15 @@
 	&__dot {
 		box-sizing: border-box;
 		display: block;
-		width: 8px;
-		height: 8px;
-		border-radius: 50%;
+		width: 20px;
+		height: 6px;
+		border-radius: 10px;
 		flex-shrink: 0;
 		background-color: rgba(var(--accent), 0.3);
 		cursor: pointer;
 		
 		&:not(:last-child) {
-			margin-right: 10px;
+			margin-right: 6px;
 		}
 		
 		&.active {
@@ -71,12 +71,13 @@
 		z-index: 3;
 		height: 28px;
 		width: 28px;
-		background-color: rgb(var(--bgcolor));
+		background-color: rgb(var(--accent));
 		border-radius: 11px;
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		
+		animation: moveButtonDown 2s infinite;
+
 		@include media('<=xxlg') {
 			right: 30px;
 		}
@@ -94,8 +95,8 @@
 			display: block;
 			content: '';
 			width: 12px;
-			height: 5px;
-			background: url('#{$images-path}icons-sprite.svg#icon-down-view-accent') center / cover no-repeat transparent;
+			height: 6px;
+			background: url('#{$images-path}icons-sprite.svg#icon-down-view-dark') center / 12px 6px no-repeat transparent;
 		}
 	}
 }
