@@ -64,9 +64,10 @@ export const preloadingBar = (options = {}) => {
 	}
 	
 	const loadDone = () => {
+		_wrapper.classList.add(`${cls}_done`);
+
 		let computed = getComputedStyle(_wrapper, null);
 		let delay = parseInt(computed.transitionDuration) * 1000;
-		_wrapper.style.opacity = 0;
 
 		setTimeout(() => { 
 			_wrapper.remove();
