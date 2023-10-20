@@ -1,10 +1,13 @@
 .hero {
 	$self: &;
 	min-height: 100vh;
-	min-height: calc(var(--vh, 1vh) * 100);
 	display: flex;
 	position: relative;
 	z-index: 1;
+	
+	@include media('<=xxs') {
+		min-height: calc(var(--vh, 1vh) * 100);
+	}
 	
 	&__slider {
 		
@@ -47,8 +50,8 @@
 		box-sizing: border-box;
 		display: block;
 		width: 20px;
-		height: 6px;
-		border-radius: 10px;
+		height: 4px;
+		// border-radius: 10px;
 		flex-shrink: 0;
 		background-color: rgba(var(--accent), 0.3);
 		cursor: pointer;
