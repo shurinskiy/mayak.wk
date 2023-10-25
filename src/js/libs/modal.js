@@ -106,7 +106,7 @@ export const makeModalFrame = function(props = {}) {
 			}
 
 			this.modal.className = `${this.props.class}`;
-			this.modal.classList.add(data.includes('#') ? `${this.props.class}_${data}`:`${this.props.class}_self`);
+			this.modal.classList.add(data.includes('#') ? `${this.props.class}_${data.replace('#', '')}`:`${this.props.class}_self`);
 			this.modal.style.display = "block";
 			
 			this.content.innerHTML = '';
