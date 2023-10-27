@@ -114,6 +114,11 @@
 	
 	&__content {
 		min-height: 200px;
+		min-width: 300px;
+		background-image: url('#{$images-path}loading.svg');
+		background-color: rgba(0, 0, 0, 0.25);
+		background-repeat: no-repeat;
+		background-position: center;
 		
 		@include media('<=xxs') {
 			min-height: 140px;
