@@ -113,11 +113,12 @@ toggle.init(false); // удаление добавленных классов и
 *
 */
 
-export const scrollClassToggle = (options) => {
+export const scrollClassToggle = (options = {}) => {
 	class Toggle {
 	
 		constructor(options) {
 			this.options = {
+				throttle: 250,
 				nodes: [],
 				data: 'animation',
 				class: 'active',
@@ -128,7 +129,7 @@ export const scrollClassToggle = (options) => {
 			this.init();
 		}
 
-		_throttle = (fn, delay = 250) => {
+		_throttle = (fn) => {
 			let timeout = null;
 		
 			return (...args) => {
@@ -137,7 +138,7 @@ export const scrollClassToggle = (options) => {
 					timeout = setTimeout(() => {
 						fn.apply(this, args);
 						timeout = null;
-					}, delay)
+					}, this.options.throttle)
 				}
 			}
 		}

@@ -225,6 +225,7 @@ export const makeModalFrame = function(props = {}) {
 
 			document.addEventListener('click', (e) => {
 				let el = e.target.closest(this.select);
+				// let el = e.target.querySelector(this.select);
 				
 				if (el && el.hasAttribute(`data-${this.props.class}`)) {
 					e.preventDefault();
